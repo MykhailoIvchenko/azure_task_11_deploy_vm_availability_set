@@ -33,10 +33,10 @@ New-AzAvailabilitySet `
     -PlatformFaultDomainCount 2 `
     -PlatformUpdateDomainCount 2
 
-for (($zone = 1); ($zone -le 2); ($zone++) ) {
+for (($prefix = 1); ($prefix -le 2); ($prefix++) ) {
     New-AzVm `
     -ResourceGroupName $resourceGroupName `
-    -Name "$vmName-$zone" `
+    -Name "$vmName-$prefix" `
     -Location $location `
     -image $vmImage `
     -size $vmSize `
